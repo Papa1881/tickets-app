@@ -1,0 +1,49 @@
+.card {
+  background-color: #e8ebf2;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #4e148c;
+  margin: 30px 0;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo {
+  height: 32px;
+  object-fit: contain;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.route {
+  font-weight: 500;
+  padding-bottom: 9px;
+  color: #858AE3;
+  font-size: 16px;
+}
+
+.time {
+  font-size: 14px;
+}
+
+.label {
+  font-size: 13px;
+  color: #858AE3;
+  margin-bottom: 4px;
+}

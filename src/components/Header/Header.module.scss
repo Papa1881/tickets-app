@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  max-width: 1048px;
+  color: #4E148C;
+  width: 100%;
+  padding: 0 24px; 
+  margin: 40px auto 24px;
+}
+
+.logo {
+  width: 100px;
+  height: 80.45px;
+  display: block;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .header {
+    justify-content: center;  
+    gap: 0;
+    padding-top: 32px;
+  }
+
+  .title {
+    display: none;            
+  }
+}

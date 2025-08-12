@@ -1,0 +1,124 @@
+{
+  "tickets": [
+    {
+      "id": 1,
+      "from": "SVO",
+      "to": "LED",
+      "company": "pobeda",
+      "price": 12680,
+      "currency": "RUB",
+      "time": {
+        "startTime": "12:00",
+        "endTime": "16:30"
+      },
+      "duration": 270,
+      "date": "2025-08-04",
+      "connectionAmount": 1
+    },
+    {
+      "id": 2,
+      "from": "SVO",
+      "to": "LED",
+      "company": "redwings",
+      "price": 21500,
+      "currency": "RUB",
+      "time": {
+        "startTime": "14:00",
+        "endTime": "16:00"
+      },
+      "duration": 120,
+      "date": "2025-08-04",
+      "connectionAmount": 0
+    },
+    {
+      "id": 3,
+      "from": "SVO",
+      "to": "LED",
+      "company": "s7",
+      "price": 23995,
+      "currency": "RUB",
+      "time": {
+        "startTime": "04:50",
+        "endTime": "13:30"
+      },
+      "duration": 520,
+      "date": "2025-08-04",
+      "connectionAmount": 2
+    },
+    {
+  "id": 4,
+  "from": "SVO",
+  "to": "LED",
+  "company": "redwings",
+  "price": 27995,
+  "currency": "RUB",
+  "time": {
+    "startTime": "10:00",
+    "endTime": "14:00"
+  },
+  "duration": 240,
+  "date": "2025-08-04",
+  "connectionAmount": 1
+},
+{
+  "id": 5,
+  "from": "SVO",
+  "to": "LED",
+  "company": "pobeda",
+  "price": 37995,
+  "currency": "RUB",
+  "time": {
+    "startTime": "10:00",
+    "endTime": "14:00"
+  },
+  "duration": 240,
+  "date": "2025-08-04",
+  "connectionAmount": 1
+},
+{
+  "id": 6,
+  "from": "SVO",
+  "to": "LED",
+  "company": "s7",
+  "price": 47995,
+  "currency": "RUB",
+  "time": {
+    "startTime": "10:00",
+    "endTime": "14:00"
+  },
+  "duration": 240,
+  "date": "2025-08-04",
+  "connectionAmount": 1
+},
+{
+  "id": 7,
+  "from": "SVO",
+  "to": "LED",
+  "company": "pobeda",
+  "price": 57995,
+  "currency": "RUB",
+  "time": {
+    "startTime": "10:00",
+    "endTime": "14:00"
+  },
+  "duration": 240,
+  "date": "2025-08-04",
+  "connectionAmount": 1
+},
+{
+  "id": 8,
+  "from": "SVO",
+  "to": "LED",
+  "company": "s7",
+  "price": 17000,
+  "currency": "RUB",
+  "time": {
+    "startTime": "10:00",
+    "endTime": "14:00"
+  },
+  "duration": 240,
+  "date": "2025-08-04",
+  "connectionAmount": 3
+}
+  ]
+}

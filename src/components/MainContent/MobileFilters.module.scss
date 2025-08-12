@@ -1,0 +1,150 @@
+/* Цвета из макета */
+$purple: #4E148C;
+$purple-200: #6d2ab6;
+$surface: rgba(255,255,255,0.06);
+$white: #F7F9F7;
+$text-dim: #D3C7F6;
+
+/* Контейнер карточки */
+.wrap {
+  background: $purple;
+  color: #F7F9F7;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(78,20,140,.25);
+  overflow: hidden;
+  margin: 16px 0;
+
+  /* не показываем на десктопе (у тебя всё равно есть условный рендер) */
+  @media (min-width: 1025px) { display: none; }
+}
+
+/* Шапка с текстом и кнопкой-стрелкой */
+.head {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,0) 100%);
+  padding: 12px 23px;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 16px;
+  color: #F7F9F7;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 17px;
+  font-weight: 500;
+  font-size: 12px;
+  white-space: nowrap;
+  color: #F7F9F7;
+}
+
+.chevron {
+  width: 18px; height: 18px;
+  transition: transform .2s ease;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-height: 0;
+  opacity: 0;
+  color: #F7F9F7;
+  font-weight: 700;
+  padding-bottom: 20px;
+  font-size: 20px;
+  padding-left: 28px;
+  transform: translateY(-6px);
+  transition: max-height .25s ease, opacity .2s ease, transform .25s ease;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.bodyOpen {
+  max-height: 1000px; 
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  align-items: center;
+  gap: 20px;
+  padding-top: 5px;
+  font-size: 16px;
+  color: $text-dim;
+  user-select: none;
+
+  input {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 1px solid $white;
+    border-radius: 6px;            
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    transition: border-color .15s ease, background-color .15s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 14px;
+      background: url('../../assets/image5.svg') no-repeat center;
+      background-size: contain;
+      opacity: 0;
+      transition: opacity .15s ease;
+    }
+
+    &:checked {
+      background: $white;
+      border-color: $white;
+
+      &::after { opacity: 1; }
+    }
+  }
+}
+
+.col:first-child .row input {
+  border-radius: 50%;
+  background: transparent;
+  position: relative;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: $white; 
+    opacity: 0;         
+    transition: opacity 0.15s ease;
+  }
+
+  &:checked {
+    background: transparent;    
+    border-color: $white;      
+
+    &::after {
+      opacity: 1;               
+    }
+  }
+}

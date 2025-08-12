@@ -1,0 +1,68 @@
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sortTabs {
+  display: flex;
+  gap: 12px;
+}
+
+.tab {
+  padding: 10px 16px;
+  border: 1px solid #651fff;
+  border-radius: 6px;
+  background-color: white;
+  color: #651fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &.active {
+    background-color: #651fff;
+    color: white;
+  }
+}
+
+.ticketList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loadMore {
+  margin-top: 20px;
+  align-self: center;
+  background-color: #651fff;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #5120c1;
+  }
+}
+
+
+.loadMore {
+  width: 100%;
+  padding: 16px;
+  margin-top: 30px;
+  background-color: #4E148C;
+  color: #F7F9F7;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #4E148C;
+  }
+}

@@ -1,0 +1,28 @@
+.tabs {
+  display: flex;
+  border: 1px solid #4E148C;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 727px;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  font-weight: 600;
+  text-align: center;
+  background-color: #E8EBF2;
+  color: #4E148C;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:not(:last-child) {
+    border-right: 1px solid #4E148C;
+  }
+}
+
+.active {
+  background-color: #4E148C;
+  color: #F7F9F7;
+}

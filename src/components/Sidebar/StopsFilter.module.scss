@@ -1,0 +1,49 @@
+.card {
+  background: #E8EBF2;
+  border-radius: 12px;
+  padding: 19px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 0 4px;
+  color: #4E148C;
+}
+
+.card label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+  color: #858AE3;
+}
+
+.card input[type='checkbox'] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid #4E148C;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all .2s ease;
+}
+
+.card input[type='checkbox']:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translate(-50%, -52%);
+  background: url('../../assets/image5.svg') no-repeat center / contain;
+}

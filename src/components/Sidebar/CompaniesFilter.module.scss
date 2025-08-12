@@ -1,0 +1,57 @@
+.card {
+  background: #E8EBF2;
+  border-radius: 12px;
+  padding: 19px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 47px;
+}
+
+.title {
+  margin: 0 0 4px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #4E148C;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+}
+
+.text {
+  font-size: 16px;
+  color: #858AE3;
+}
+
+.input {
+  appearance: none;
+  width: 21px;
+  height: 21px;
+  border: 1px solid #4E148C;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all .2s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background: #4E148C;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity .15s ease;
+  }
+
+  &:checked::after {
+    opacity: 1;
+  }
+}

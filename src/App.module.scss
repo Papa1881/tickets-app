@@ -1,0 +1,17 @@
+.wrapper {
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.layout {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  max-width: 1048px;
+  margin-top: 40px;
+}
+
+
