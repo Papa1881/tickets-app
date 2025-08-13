@@ -1,22 +1,33 @@
 import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import axios from 'axios'
 import type { Ticket } from '../../components/MainContent/Ticket'
+import raw from '../../mock/db.json'
+
+type TicketsFile = { tickets: Ticket[] }  // описываем форму json
+
+export const fetchTickets = createAsyncThunk<Ticket[]>(
+  'tickets/fetchTickets',
+  async () => {
+    // Возвращаем именно массив билетов, а не объект целиком
+    const data = raw as unknown as TicketsFile
+    // эмулируем сеть, можно убрать setTimeout
+    return new Promise<Ticket[]>((resolve) => {
+      setTimeout(() => resolve(data.tickets), 200)
+    })
+  }
+)
+
+
 
 const ticketsAdapter = createEntityAdapter<Ticket>()
 
 const initialState = ticketsAdapter.getInitialState({
-  status: 'idle',
+  status: 'idle' as 'idle' | 'loading' | 'succeeded' | 'failed',
   error: null as string | null,
   sortBy: 'price' as 'price' | 'duration' | 'optimal',
-  stopsFilter: [] as number[],       
-  companiesFilter: [] as string[],   
-  visibleCount: 3                    
-})
-
-export const fetchTickets = createAsyncThunk<Ticket[]>('tickets/fetchTickets', async () => {
-  const response = await axios.get<Ticket[]>('http://localhost:3001/tickets')
-  return response.data
+  stopsFilter: [] as number[],
+  companiesFilter: [] as string[],
+  visibleCount: 3, // по макету сначала 3
 })
 
 const ticketsSlice = createSlice({
@@ -33,13 +44,14 @@ const ticketsSlice = createSlice({
       state.companiesFilter = action.payload
     },
     showMoreTickets(state) {
-      state.visibleCount += 5
+      state.visibleCount += 3 // по макету догружаем по 3
     }
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchTickets.pending, (state) => {
         state.status = 'loading'
+        state.error = null
       })
       .addCase(fetchTickets.fulfilled, (state, action) => {
         state.status = 'succeeded'
@@ -52,6 +64,8 @@ const ticketsSlice = createSlice({
   }
 })
 
+export default ticketsSlice.reducer
+
 export const {
   selectAll: selectAllTickets,
   selectById: selectTicketById
@@ -63,5 +77,3 @@ export const {
   setCompaniesFilter,
   showMoreTickets
 } = ticketsSlice.actions
-
-export default ticketsSlice.reducer
